@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import InputGroup from "../../InputGroup/InputGroup";
 import * as yup from "yup";
 import { login } from "../../../services/AuthService";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup.object({
     email: yup.string().email().required(),
@@ -16,7 +16,7 @@ const schema = yup.object({
 function Login() {
   const [error, setError] = useState();
   const [isSubmitting, setIsSubmitting] = useState(false);
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -32,6 +32,7 @@ function Login() {
     login(data)
       .then((response) => {
         console.log(response);
+        navigate('/profile')
       })
       .catch((err) => {
         setError(err?.response?.data?.message);

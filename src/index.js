@@ -6,9 +6,6 @@ import { BrowserRouter } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
 
 
-
-
-
 const container = document.getElementById('root');
 const root = createRoot(container);
 

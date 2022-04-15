@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 import { yupResolver} from "@hookform/resolvers/yup"
 import InputGroup from '../../InputGroup/InputGroup';
 import * as yup from "yup";
-import { register as registerRequest } from '../../../services/UsersService'
+import { register as registerRequest } from '../../../services/AuthService'
 import { useNavigate } from 'react-router-dom';
 
 

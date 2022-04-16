@@ -23,20 +23,16 @@ function App() {
         <p>Loading...</p>
       ) : (
         <Routes>
-          {!user ? ( <>
-            <Route path="/sign-up" element={<SignUp />} />
-            <Route path="/login" element={<Login />} />
-          </> ) : ( <>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/services" element={<Services />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/" element={<ProtectedRoute />}>
-              <Route path="/profile" element={<Profile />} />
-              <Route patch="/songs" element={<Songs />} />
-            </Route>
-          </> )}
-         
-         
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/services" element={<Services />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/" element={<ProtectedRoute />}>
+            <Route path="/profile" element={<Profile />} />
+            <Route patch="/songs" element={<Songs />} />
+          </Route>
         </Routes>
       )}
     </div>

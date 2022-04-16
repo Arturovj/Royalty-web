@@ -13,28 +13,32 @@ import { useAuthContext } from "./contexts/AuthContext";
 import ProtectedRoute from "./guards/ProtectedRoute";
 
 function App() {
-  const { isAuthenticationFetched } = useAuthContext()
+  const { user, isAuthenticationFetched } = useAuthContext();
 
   return (
     <div className="App">
       <Navbar />
 
-      {/* {!isAuthenticationFetched ? (
+      {!isAuthenticationFetched ? (
         <p>Loading...</p>
-      ) : ( */}
-
+      ) : (
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/services" element={<Services />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-         <Route path="/" element={<ProtectedRoute/>}>
-          <Route path="/profile" element={<Profile />} />
-          <Route patch="/songs" element={<Songs />} />
-           </Route> 
+          {!user ? ( <>
+            <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+          </> ) : ( <>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/services" element={<Services />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/" element={<ProtectedRoute />}>
+              <Route path="/profile" element={<Profile />} />
+              <Route patch="/songs" element={<Songs />} />
+            </Route>
+          </> )}
+         
+         
         </Routes>
-    {/* //  )}  */}
+      )}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { getAccessToken } from '../store/AccesTokenStore'
+import { getAccessToken, logout } from '../store/AccesTokenStore'
 
 
 
@@ -19,7 +19,19 @@ const createHttp = (useAccessToken = false) => {
     )
     
     http.interceptors.response.use(
-        (response) => response.data
+        (response) => response.data,
+        (error) => {
+
+            if (error?.response?.status && [401, 403].includes(error.response.status)){
+                if(getAccessToken()) {
+                    logout()
+                    if (window.location.pathname !== '/login') {
+                        window.location.assign('/login')
+                    }
+                }
+            }
+            return Promise.reject(error)
+        }
     )
     return http
 }

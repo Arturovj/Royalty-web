@@ -13,9 +13,9 @@ export const AuthContextProvider = ({ children }) => {
     const [user, setUser] = useState()
     const [isAuthenticationFetched, setIsAuthenticationFetched] = useState(false)
 
-    const login = (token) =>{
+    const login = (token, navigateCb) =>{
         setToken(token)
-        getUser()
+        getUser(navigateCb)
     }
 
    const getUser = (cb) => {
@@ -43,7 +43,8 @@ export const AuthContextProvider = ({ children }) => {
     const value = {
         user,
         isAuthenticationFetched,
-        login
+        login,
+        getUser
     }
 
     return (

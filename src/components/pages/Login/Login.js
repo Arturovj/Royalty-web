@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import InputGroup from "../../InputGroup/InputGroup";
 import * as yup from "yup";
 import { login as loginRequest } from "../../../services/AuthService";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../../contexts/AuthContext";
 
 const schema = yup.object({
@@ -16,6 +16,10 @@ const schema = yup.object({
 
 function Login() {
     const { login } = useAuthContext()
+
+    let location = useLocation()
+
+    let from = location.state?.from?.pathname || "/profile";
 
   const [error, setError] = useState();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,8 +39,7 @@ function Login() {
     loginRequest(data)
       .then((response) => {
         console.log(response);
-        login(response.access_token)
-        navigate('/profile')
+        login(response.access_token, () => navigate(from, { replace: true}))
       })
       .catch((err) => {
         setError(err?.response?.data?.message);

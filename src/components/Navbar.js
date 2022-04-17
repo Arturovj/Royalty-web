@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Button } from "./Button";
 import { ButtonLogin } from "./ButtonLogin";
 import { ButtonProfile } from "./ButtonProfile";
+import { ButtonLogout } from "./ButtonLogout";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useAuthContext } from "../contexts/AuthContext";
+import { logout } from "../store/AccesTokenStore";
 
 function Navbar() {
   const { user } = useAuthContext();
@@ -106,6 +108,15 @@ function Navbar() {
                     Profile
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/profile"
+                    className="nav-links-mobile"
+                    onClick={logout}
+                  >
+                    Logout
+                  </Link>
+                </li>
               </>
             )}
           </ul>
@@ -127,6 +138,13 @@ function Navbar() {
                 <ButtonProfile buttonStyle="btn--outline">
                   Profile
                 </ButtonProfile>
+              )}
+            </div>
+            <div className="logout-button">
+              {button && (
+                <ButtonLogout buttonStyle="btn--outline">
+                  Logout
+                </ButtonLogout>
               )}
             </div>
           </>

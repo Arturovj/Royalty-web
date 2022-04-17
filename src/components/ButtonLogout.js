@@ -13,16 +13,16 @@
 import React from 'react';
 import './Button.css';
 import { Link } from 'react-router-dom';
+import { logout } from '../store/AccesTokenStore';
 
 
 const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
 
 const SIZES = ['btn--medium', 'btn--large'];
 
-export const ButtonProfile = ({
+export const ButtonLogout = ({
   children,
   type,
-  onClick,
   buttonStyle,
   buttonSize
 }) => {
@@ -36,7 +36,7 @@ export const ButtonProfile = ({
     <Link to='/login' className='btn-mobile'>
       <button
         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-        onClick={onClick}
+        onClick={logout}
         type={type}
       >
         {children}

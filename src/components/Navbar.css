@@ -12,15 +12,15 @@
 }
 
 .login-button{
-  margin-left: 45px;
+  margin-left: 20px;
 }
 
 .profile-button{
-  margin-left: 45px;
+  margin-left: 20px;
 }
 
 .logout-button{
-  margin-left: 45px;
+  margin-left: 20px;
 }
 
 .navbar.active{
@@ -119,7 +119,7 @@
 
   .nav-links {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     width: 100%;
     display: table;
   }
@@ -155,16 +155,17 @@
   .nav-links-mobile {
     display: block;
     text-align: center;
-    margin: 2rem auto;
+    margin: 0.5rem auto;
     border-radius: 4px;
     width: 80%;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     background-color: transparent;
     color: #fff;
     padding: 14px 20px;
     border: 1px solid #fff;
     transition: all 0.3s ease-out;
+    margin-bottom: 25px;
   }
 
   .nav-links-mobile:hover {

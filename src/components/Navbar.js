@@ -3,6 +3,7 @@ import { Button } from "./Button";
 import { ButtonLogin } from "./ButtonLogin";
 import { ButtonProfile } from "./ButtonProfile";
 import { ButtonLogout } from "./ButtonLogout";
+import { ButtonAdd } from "./ButtonAdd";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useAuthContext } from "../contexts/AuthContext";
@@ -72,7 +73,7 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Products
+                Songs
               </Link>
             </li>
             {!user ? (
@@ -99,6 +100,15 @@ function Navbar() {
               </>
             ) : (
               <>
+              <li>
+                  <Link
+                    to="/addMusic"
+                    className="nav-links-mobile"
+                    onClick={closeMobileMenu}
+                  >
+                    + <i class="fas fa-music"></i>
+                  </Link>
+                </li>
                 <li>
                   <Link
                     to="/profile"
@@ -133,6 +143,13 @@ function Navbar() {
               ) : (
 
           <>
+          <div className="add-button">
+              {button && (
+                <ButtonAdd buttonStyle="btn--outline">
+                  +<i class="fas fa-music"></i>
+                </ButtonAdd>
+              )}
+            </div>
             <div className="profile-button">
               {button && (
                 <ButtonProfile buttonStyle="btn--outline">
@@ -142,7 +159,7 @@ function Navbar() {
             </div>
             <div className="logout-button">
               {button && (
-                <ButtonLogout buttonStyle="btn--outline">
+                <ButtonLogout buttonStyle="btn--outlinelogout">
                   Logout
                 </ButtonLogout>
               )}

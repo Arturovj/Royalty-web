@@ -1,0 +1,37 @@
+:root {
+    --primary: #fff;
+  }
+  
+  
+  .btn--primarylogout {
+    background-color: var(--primary);
+    color: #242424;
+    border: 1px solid var(--primary);
+  }
+  
+  .btn--outlinelogout {
+    background-color: transparent;
+    color: rgb(255, 0, 0);
+    padding: 8px 20px;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease-out;
+  }
+  
+  .btn--mediumlogout {
+    padding: 8px 20px;
+    font-size: 18px;
+  }
+  
+  .btn--largelogout {
+    padding: 12px 26px;
+    font-size: 20px;
+  }
+  
+  .btn--largelogout:hover,
+  .btn--mediumlogout:hover {
+    transition: all 0.3s ease-out;
+    background: rgb(255, 0, 0);
+    color: #242424;
+    transition: 250ms;
+  }
+  

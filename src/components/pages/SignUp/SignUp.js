@@ -55,7 +55,7 @@ return(
 
     <form className='register-form' onSubmit={handleSubmit(onSubmit)}>
       
-      
+    <h1>Signup</h1>
       <InputGroup
         label="Email"
         id="email"
@@ -73,6 +73,7 @@ return(
         error={backErrors?.name || errors.name?.message}
         placeholder="NAME"
       />
+      
        <InputGroup
         label="Password"
         id="password"

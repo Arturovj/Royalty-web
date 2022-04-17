@@ -11,18 +11,17 @@
 // }
 
 import React from 'react';
-import './ButtonLogout.css';
+import './Button.css';
 import { Link } from 'react-router-dom';
-import { logout } from '../store/AccesTokenStore';
 
+const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
 
-const STYLES = ['btn--primarylogout', 'btn--outlinelogout', 'btn--test'];
+const SIZES = ['btn--medium', 'btn--large'];
 
-const SIZES = ['btn--mediumlogout', 'btn--large'];
-
-export const ButtonLogout = ({
+export const ButtonAdd = ({
   children,
   type,
+  onClick,
   buttonStyle,
   buttonSize
 }) => {
@@ -33,10 +32,10 @@ export const ButtonLogout = ({
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
   return (
-    <Link to='/login' className='btn-mobile'>
+    <Link to='/addSong' className='btn-mobile'>
       <button
         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-        onClick={logout}
+        onClick={onClick}
         type={type}
       >
         {children}

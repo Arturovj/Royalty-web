@@ -49,12 +49,13 @@ function Login() {
 
   return (
     <div className="Login">
-      <h1>Login</h1>
+      
       <div className="background-login">
         <div className="shape"></div>
         <div className="shape"></div>
       </div>
       <form className='login-form' onSubmit={handleSubmit(onSubmit)}>
+      <h1>Login</h1>
       
       <InputGroup
         label="Email"

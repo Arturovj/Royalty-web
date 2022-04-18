@@ -203,14 +203,14 @@ export default class Contenido extends Component {
       {
         id: "seleccion",
         options: [
-          { value: "f", label: "Front-End", trigger: "7A" },
-          { value: "b", label: "Back-End", trigger: "7B" },
+          { value: "f", label: "What is Royalty?", trigger: "7A" },
+          { value: "b", label: "You already know what Royalty is?", trigger: "7B" },
         ],
       },
       {
         id: "7A",
         message:
-          "I see you like Front-End programming! Which of these frameworks would you like to know more about?",
+          "I see you like Music! Which of these options would you like to know more about?",
         trigger: "seleccionFront",
       },
       {
@@ -222,9 +222,9 @@ export default class Contenido extends Component {
       {
         id: "seleccionFront",
         options: [
-          { value: "Angular_(framework)", label: "Angular", trigger: "9" },
-          { value: "React", label: "React", trigger: "9" },
-          { value: "Vue.js", label: "Vue.js", trigger: "9" },
+          { value: "Upload Music", label: "Upload Music", trigger: "9" },
+          { value: "Buy Music", label: "Buy Music", trigger: "9" },
+          { value: "More info", label: "More info", trigger: "9" },
         ],
       },
       {

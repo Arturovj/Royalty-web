@@ -11,13 +11,15 @@ import Profile from "./components/pages/Profile/Profile";
 import Songs from "./components/pages/Songs/Songs";
 import { useAuthContext } from "./contexts/AuthContext";
 import ProtectedRoute from "./guards/ProtectedRoute";
+import Contenido from "./components/Contenido/Contenido";
 
 function App() {
-  const { user, isAuthenticationFetched } = useAuthContext();
+  const { isAuthenticationFetched } = useAuthContext();
 
   return (
     <div className="App">
       <Navbar />
+      <Contenido/>
 
       {!isAuthenticationFetched ? (
         <p>Loading...</p>
@@ -35,6 +37,8 @@ function App() {
           </Route>
         </Routes>
       )}
+
+      
     </div>
   );
 }

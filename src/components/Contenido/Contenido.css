@@ -1,0 +1,6 @@
+.chatbot{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+}

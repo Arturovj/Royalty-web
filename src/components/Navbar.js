@@ -47,7 +47,7 @@ function Navbar() {
       <nav className={navbar ? "navbar active" : "navbar"}>
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            ROYAL<i class="fas fa-dice-d6"></i>Y
+            ROYAL<i className="fas fa-dice-d6"></i>Y
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -106,7 +106,7 @@ function Navbar() {
                     className="nav-links-mobile"
                     onClick={closeMobileMenu}
                   >
-                    + <i class="fas fa-music"></i>
+                    + <i className="fas fa-music"></i>
                   </Link>
                 </li>
                 <li>
@@ -146,7 +146,7 @@ function Navbar() {
           <div className="add-button">
               {button && (
                 <ButtonAdd buttonStyle="btn--outline">
-                  +<i class="fas fa-music"></i>
+                  +<i className="fas fa-music"></i>
                 </ButtonAdd>
               )}
             </div>

@@ -4,45 +4,45 @@ function HeroSection2() {
     return(
         <div className='marginHeroSection2'>
         <div className='bodyHeroSection2'>
-        <div class="header2">
-          <h1 class="header-title">Best way to share royalties</h1>
-          <h2 class="header-subtitle">Powered by Royalty</h2>
+        <div className="header2">
+          <h1 className="header-title">Best way to share royalties</h1>
+          <h2 className="header-subtitle">Powered by Royalty</h2>
       
-          <p class="header-paragraph">
+          <p className="header-paragraph">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </div>
       
-        <section class="cards-herosection2">
-          <div class="card-supervisor">
-            <h1 class="card-title">Create a community</h1>
-            <p class="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-            <div class="card-image">
-            <i class="fas fa-users fabicon"></i>
+        <section className="cards-herosection2">
+          <div className="card-supervisor">
+            <h1 className="card-title">Create a community</h1>
+            <p className="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <div className="card-image">
+            <i className="fas fa-users fabicon"></i>
             </div>
           </div>
       
-          <div class="card-team-builder">
-            <h1 class="card-title">Share your music</h1>
-            <p class="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-            <div class="card-image">
-            <i class="fas fa-compact-disc fabicon"></i>
+          <div className="card-team-builder">
+            <h1 className="card-title">Share your music</h1>
+            <p className="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <div className="card-image">
+            <i className="fas fa-compact-disc fabicon"></i>
             </div>
           </div>
           
-          <div class="card-karma">
-            <h1 class="card-title">Safe legal transactions</h1>
-            <p class="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-            <div class="card-image">
-            <i class="fas fa-balance-scale fabicon"></i>
+          <div className="card-karma">
+            <h1 className="card-title">Safe legal transactions</h1>
+            <p className="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <div className="card-image">
+            <i className="fas fa-balance-scale fabicon"></i>
             </div>
           </div>
       
-          <div class="card-calculator">
-            <h1 class="card-title">Crypto & SmartContracts</h1>
-            <p class="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-            <div class="card-image">
-            <i class="fab fa-bitcoin fabicon"></i>
+          <div className="card-calculator">
+            <h1 className="card-title">Crypto & SmartContracts</h1>
+            <p className="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <div className="card-image">
+            <i className="fab fa-bitcoin fabicon"></i>
             </div>
           </div>
         </section>

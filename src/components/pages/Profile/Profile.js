@@ -17,7 +17,7 @@ const Profile = () => {
       {/* <div className="profile"><p>{JSON.stringify(user)}</p></div> */}
 
       <form className="profile-form">
-      <div class="profile block">
+      <div className="profile block">
       <Link to="/editprofile">
                     <a className="add-button aprofile" ><span className="icon entypo-cog scnd-font-color"></span></a>
                     </Link>
@@ -26,7 +26,7 @@ const Profile = () => {
                     </div>
                     <h1 className="user-name h1profile">Daft Punk</h1>
                     <div className="profile-description">
-                        <p class="scnd-font-color">{user.email}</p>
+                        <p className="scnd-font-color">{user.email}</p>
                     </div>
                     <ul className="profile-options horizontal-list">
                         <li><a className="comments aprofile" ><p><span className="icon fontawesome-comment-alt scnd-font-color"></span>Chat</p></a></li>

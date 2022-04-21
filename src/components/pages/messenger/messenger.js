@@ -4,6 +4,7 @@ import AuthContext from "../../../contexts/AuthContext";
 import ChatOnline from "../../chatOnline/ChatOnline";
 import Conversation from "../../conversation/Conversation";
 import Message from "../../message/Message";
+import {io} from "socket.io-client"
 import "./messenger.css";
 
 export default function Messenger() {
@@ -11,9 +12,41 @@ export default function Messenger() {
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
+  const [arrivalMessage, setArrivalMessage] = useState(null)
+  const socket = useRef()
   const scrollRef = useRef()
 
   const { user } = useContext(AuthContext);
+
+    useEffect(() => {
+        socket.current = io("ws://localhost:8900")
+        socket.current.on("getMessage", data =>{
+            setArrivalMessage({
+                sender: data.senderId,
+                text: data.text,
+                createdAt: Date.now(),
+            });
+        });
+    },[]);
+
+    useEffect(()=> {
+        arrivalMessage && 
+        currentChat?.members.includes(arrivalMessage.sender) &&
+        setMessages((prev) => [...prev, arrivalMessage])
+    },[arrivalMessage, currentChat])
+
+    useEffect(() => {
+        socket.current.emit("addUser", user._id)
+        socket.current.on("getUsers", users=> {
+            console.log(users)
+        })
+    },[user])
+
+//   useEffect(() => {
+//       socket?.on("welcome", message =>{
+//           console.log(message)
+//       })
+//   },[socket])
 
   useEffect(() => {
     const getConversations = async () => {
@@ -49,6 +82,15 @@ export default function Messenger() {
           text: newMessage,
           conversationId: currentChat._id
       };
+
+      const receiverId = currentChat.members.find(member=> member !==user._id)
+
+      socket.current.emit("sendMessage", {
+          senderId: user._id,
+          receiverId,
+          text: newMessage
+      })
+
       try{
         const res = await axios.post("http://localhost:3001/api/messages/", message)
         setMessages([...messages, res.data])
@@ -61,6 +103,10 @@ export default function Messenger() {
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth"})
   },[messages])
+
+
+
+ 
 
   return (
     <div className="messenger">

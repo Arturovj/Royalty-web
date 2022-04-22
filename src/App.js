@@ -15,6 +15,8 @@ import Contenido from "./components/Contenido/Contenido";
 import UnProtectedRoute from "./guards/UnProtectedRoute";
 import NewPost from "./components/pages/NewPost/NewPost";
 import Messenger from "./components/pages/messenger/messenger";
+import UserDetail from "./components/pages/User/UserDetail";
+import PostDetail from "./components/pages/Artists/PostDetail";
 
 function App() {
   const { isAuthenticationFetched } = useAuthContext();
@@ -38,8 +40,10 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/" element={<ProtectedRoute />}>
             <Route path="/profile" element={<Profile />} />
+            <Route path="/users/:id" element={<UserDetail/>}/>
             <Route path="/songs" element={<Songs />} />
             <Route path="/messenger" element={<Messenger />}></Route>
+            <Route path="/post/:id" element={<PostDetail />}></Route>
             <Route path="/addMusic" element={<NewPost/>}></Route>
           </Route>
         </Routes>

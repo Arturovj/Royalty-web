@@ -1,17 +1,33 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useEffect, useReducer, useState } from "react"
 import { getAccessToken, logout, setToken } from "../store/AccesTokenStore"
 import { getCurrentUser } from '../services/UsersService'
+import AuthReducer from "./AuthReducer";
 import { verifyJWT } from "../utils/jwtHelper"
 
+const INITIAL_STATE = {
+    user:JSON.parse(localStorage.getItem("user")) || null,
+    isFetching: false,
+    error: false,
+  };
 
-const AuthContext = createContext()
+
+const AuthContext = createContext(INITIAL_STATE)
 
 export const useAuthContext = () => useContext(AuthContext)
 
 
 export const AuthContextProvider = ({ children }) => {
+
+    
     const [user, setUser] = useState()
     const [isAuthenticationFetched, setIsAuthenticationFetched] = useState(false)
+
+    const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE);
+  
+    useEffect(()=>{
+      localStorage.setItem("user", JSON.stringify(state.user))
+    },[state.user])
+    
 
     const login = (token, navigateCb) =>{
         setToken(token)
@@ -44,7 +60,8 @@ export const AuthContextProvider = ({ children }) => {
         user,
         isAuthenticationFetched,
         login,
-        getUser
+        getUser,
+        dispatch
     }
 
     return (

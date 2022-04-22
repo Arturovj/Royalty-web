@@ -18,6 +18,7 @@ import Messenger from "./components/pages/messenger/messenger";
 import UserDetail from "./components/pages/User/UserDetail";
 import PostDetail from "./components/pages/Artists/PostDetail";
 
+
 function App() {
   const { isAuthenticationFetched } = useAuthContext();
 

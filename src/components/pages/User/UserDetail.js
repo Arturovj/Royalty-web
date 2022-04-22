@@ -3,11 +3,12 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { getUserDetail } from '../../../services/UsersService';
 import { Link, useParams } from 'react-router-dom';
-// import { useAuthContext } from '../../../contexts/AuthContext';
+import Rightbar from '../AddFriends/AddFriends';
+ import { useAuthContext } from '../../../contexts/AuthContext';
 
 const UserDetail = () => {
   const [currentUser, setCurrentUser] = useState({})
-//   const { user } = useAuthContext()
+   const { user } = useAuthContext()
   const { id } = useParams()
 
   useEffect(() => {
@@ -16,13 +17,12 @@ const UserDetail = () => {
         setCurrentUser(user)
       })
   }, [])
-
- 
-
+  
   return (
     <div className="Profile">
     
     <h3>Posts</h3>
+    
     <hr />
     <div>
       <ul className="list-group">
@@ -37,6 +37,10 @@ const UserDetail = () => {
         )}
       </ul>
     </div>
+      <Rightbar style={{
+        background:"red"
+      }} user={user}/>
+
   </div>
   );
 };

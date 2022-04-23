@@ -146,7 +146,7 @@ function Navbar() {
           <div className="add-button">
               {button && (
                 <ButtonAdd buttonStyle="btn--outline">
-                  +<i className="fas fa-music"></i>
+                  +<i className="fas fa-music iAddButton"></i>
                 </ButtonAdd>
               )}
             </div>

@@ -17,6 +17,8 @@ const PostDetail = () => {
     return (
         <div>
             {post.title}
+            <img src={post.image} alt=""></img>
+            
         </div>
     )
 

@@ -31,6 +31,8 @@ const UserDetail = () => {
             <li key={post.id} className="list-group-item d-flex justify-content-between align-items-center">
               <Link className="text-reset text-decoration-none" to={`/post/${post.id}`}>
                 <p className="m-0">{i + 1}. {post.title}</p>
+                <img src={post.image} alt=""></img>
+                
               </Link>
             </li>
           )}

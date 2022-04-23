@@ -17,6 +17,7 @@ import NewPost from "./components/pages/NewPost/NewPost";
 import Messenger from "./components/pages/messenger/messenger";
 import UserDetail from "./components/pages/User/UserDetail";
 import PostDetail from "./components/pages/Artists/PostDetail";
+import { Toaster } from "react-hot-toast";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Contenido/>
+      <Toaster/>
 
       {!isAuthenticationFetched ? (
         <p>Loading...</p>

@@ -18,7 +18,7 @@ function HeroSection2() {
             <h1 className="card-title">Create a community</h1>
             <p className="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
             <div className="card-image">
-            <i className="fas fa-users fabicon"></i>
+            <i className="fas fa-users favicon"></i>
             </div>
           </div>
       
@@ -26,7 +26,7 @@ function HeroSection2() {
             <h1 className="card-title">Share your music</h1>
             <p className="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
             <div className="card-image">
-            <i className="fas fa-compact-disc fabicon"></i>
+            <i className="fas fa-compact-disc favicon"></i>
             </div>
           </div>
           
@@ -34,7 +34,7 @@ function HeroSection2() {
             <h1 className="card-title">Safe legal transactions</h1>
             <p className="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
             <div className="card-image">
-            <i className="fas fa-balance-scale fabicon"></i>
+            <i className="fas fa-balance-scale favicon"></i>
             </div>
           </div>
       
@@ -42,7 +42,7 @@ function HeroSection2() {
             <h1 className="card-title">Crypto & SmartContracts</h1>
             <p className="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
             <div className="card-image">
-            <i className="fab fa-bitcoin fabicon"></i>
+            <i className="fab fa-bitcoin favicon"></i>
             </div>
           </div>
         </section>

@@ -5,6 +5,7 @@ import { createPost } from '../../../services/PostsService'
 import { useNavigate } from "react-router-dom"
 import { useAuthContext } from "../../../contexts/AuthContext"
 import InputGroup from '../../InputGroup/InputGroup'
+import toast from 'react-hot-toast'
 
 const NewPost = () => {
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -35,6 +36,7 @@ const NewPost = () => {
         if (!data.description || !data.title || !image ) {
             setErrors(true)
         } else {
+          toast.success('Successfully Uploaded!')
             createPost(bodyFormData)
             .then((post) => {
                 getUser()

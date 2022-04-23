@@ -6,6 +6,7 @@ import InputGroup from '../../InputGroup/InputGroup';
 import * as yup from "yup";
 import { register as registerRequest } from '../../../services/AuthService'
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 
 const schema = yup.object({
@@ -44,8 +45,9 @@ const onSubmit = data => {
   if (image[0]) {
     bodyFormData.append('image', image[0])
   }
-
+  toast.success('Successfully Registered!')
   registerRequest(bodyFormData)
+ 
   .then((user) => {
     navigate('/login')
   })

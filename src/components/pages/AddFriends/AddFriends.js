@@ -5,14 +5,18 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuthContext } from "../../../contexts/AuthContext";
 import { Add, Remove } from "@material-ui/icons";
+import { getAccessToken } from "../../../store/AccesTokenStore";
+import { useParams } from "react-router-dom";
 
 export default function Rightbar({ user }) {
-
+  const { id } = useParams()
   const [friends, setFriends] = useState([]);
-  const { user: currentUser, dispatch } = useAuthContext(user);
+  const { user: currentUser, dispatch } = useAuthContext();
   const [followed, setFollowed] = useState(
-    currentUser.followings.includes(user?.id)
+    currentUser.followings.includes(id)
   );
+
+  console.log(user)
 
   useEffect(() => {
     const getFriends = async () => {
@@ -29,15 +33,15 @@ export default function Rightbar({ user }) {
   const handleClick = async () => {
     try {
       if (followed) {
-        await axios.put(`http://localhost:3001/api/users/${user._id}/unfollow`, {
-          userId: currentUser._id,
-        });
-        dispatch({ type: "UNFOLLOW", payload: user._id });
+        await axios.put(`http://localhost:3001/api/users/me/unfollow`, {
+          userId: id,
+        },{headers:{"Authorization" : `Bearer ${getAccessToken()}`}});
+        dispatch({ type: "UNFOLLOW", payload: id });
       } else {
-        await axios.put(`/users/${user._id}/follow`, {
-          userId: currentUser._id,
-        });
-        dispatch({ type: "FOLLOW", payload: user._id });
+        await axios.put(`http://localhost:3001/api/users/me/follow`, {
+          userId: id,
+        },{headers:{"Authorization" : `Bearer ${getAccessToken()}`}});
+        dispatch({ type: "FOLLOW", payload: id });
       }
       setFollowed(!followed);
     } catch (err) {
@@ -50,12 +54,12 @@ export default function Rightbar({ user }) {
     return (
       <>
       <p>HOLA</p>
-        {/* {user._id !== currentUser._id && ( */}
+        {user._id !== id && (
           <button className="rightbarFollowButton" onClick={handleClick}>
             {followed ? "Unfollow" : "Follow"}
             {followed ? <Remove /> : <Add />}
           </button>
-        {/* )} */}
+         )} 
       </>
     );
   };
@@ -63,7 +67,7 @@ export default function Rightbar({ user }) {
   return (
     <div className="rightbar">
       <div className="rightbarWrapper">
-        {user ? <ProfileRightbar /> : ""}
+        <ProfileRightbar /> 
       </div>
     </div>
   );

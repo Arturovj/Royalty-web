@@ -25,11 +25,27 @@ export default function SignUp() {
     resolver: yupResolver(schema)
   });
 
+
+
+  
+
 const onSubmit = data => {
   setBackErrors({})
   setIsSubmitting(true)
 
-  registerRequest(data)
+  const bodyFormData = new FormData()
+
+  const { image, ...rest } = data
+
+  Object.keys(rest).forEach(key => {
+    bodyFormData.append(key, rest[key])
+  })
+
+  if (image[0]) {
+    bodyFormData.append('image', image[0])
+  }
+
+  registerRequest(bodyFormData)
   .then((user) => {
     navigate('/login')
   })
@@ -81,6 +97,15 @@ return(
         error={backErrors?.password || errors.password?.message}
         type="password"
         placeholder="PASSWORD"
+      />
+
+       <InputGroup
+        label="User Image"
+        id="image"
+        register={register}
+        error={backErrors?.avatar || errors.avatar?.message}
+        type="file"
+        placeholder="Upload Image"
       />
 
 

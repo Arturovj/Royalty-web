@@ -15,12 +15,27 @@ const NewPost = () => {
     const methods = useForm();
 
     const onSubmit = methods.handleSubmit((data) => {
-        const { description , title} = data
 
-        if (!description || !title) {
+
+        // const { description , title} = data
+
+        const bodyFormData = new FormData()
+
+        const { image, ...rest } = data
+      
+        Object.keys(rest).forEach(key => {
+          bodyFormData.append(key, rest[key])
+        })
+      
+        if (image[0]) {
+          bodyFormData.append('image', image[0])
+        }
+
+
+        if (!data.description || !data.title || !image ) {
             setErrors(true)
         } else {
-            createPost({...data, user})
+            createPost(bodyFormData)
             .then((post) => {
                 getUser()
                 navigate('/profile')
@@ -65,6 +80,14 @@ const NewPost = () => {
             register={methods.register}
             type="text"
           />
+
+      <InputGroup
+        label="User Image"
+        id="image"
+        register={methods.register}
+        type="file"
+        placeholder="Upload Image"
+      />
          
           <button className={`btn btn-${isSubmitting ? 'secondary' : 'primary'}`}>{isSubmitting ? 'Creating Post...' : 'Submit'}</button>
         </form>

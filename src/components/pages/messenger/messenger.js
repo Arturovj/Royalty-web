@@ -111,6 +111,7 @@ export default function Messenger() {
 
   return (
     <div className="messenger">
+      
       <div className="chatMenu">
         <div className="chatMenuWrapper">
           <input placeholder="Search for friends" className="chatMenuInput" />
@@ -122,7 +123,7 @@ export default function Messenger() {
         </div>
       </div>
       <div className="chatBox">
-        <div className="chatBoxWrapper">
+        <div className="chatBoxWrapper messenger-form">
           {currentChat ? (
             <>
               <div className="chatBoxTop">
@@ -133,19 +134,22 @@ export default function Messenger() {
                   ))}
                 
               </div>
-              <div className="chatBoxBottom"></div>
-              <textarea
+              <form onSubmit={handleSubmit} className="chatBoxBottom">
+              <input
                 className="chatMessageInput"
                 placeholder="write something..."
                 onChange={(e) => setNewMessage(e.target.value)}
                 value={newMessage}
-              ></textarea>
-              <button className="chatSubmitButton" onClick={handleSubmit}>Send</button>
+              ></input>
+              <button className="chatSubmitButton">Send</button>
+              </form>
             </>
           ) : (
             <span className="noConversationText">Open a conversation to start a chat.</span>
           )}
+          
         </div>
+        
       </div>
         <div className="chatOnline">
           <div className="chatOnlineWrapper">

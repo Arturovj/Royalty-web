@@ -1,4 +1,5 @@
 import React from 'react';
+import "./UserDetail.scss";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { getUserDetail } from '../../../services/UsersService';
@@ -20,7 +21,37 @@ const UserDetail = () => {
   
   return (
     <div className="Profile">
-    
+    <div className="background-profile">
+        <div className="shape"></div>
+        <div className="shape"></div>
+      </div>
+      <Rightbar style={{
+        background:"red"
+      }} user={user}/>
+
+
+ <form className="profile-form">
+      <div className="profile block">
+      <Link to="/editprofile">
+                    <a className="add-button aprofile" ><span className="icon entypo-cog scnd-font-color"></span></a>
+                    </Link>
+                    <div className="profile-picture big-profile-picture clear">
+                        <img width="150px" alt="picture" src={currentUser.avatar} />
+                    </div>
+                    <h1 className="user-name h1profile">{currentUser.name}</h1>
+                    <div className="profile-description">
+                        <p className="scnd-font-color">{currentUser.email}</p>
+                    </div>
+                    <ul className="profile-options horizontal-list">
+                        <li><Link to="/messenger" style={{ textDecoration: 'none' }}><a className="comments aprofile" ><p><span className="icon fontawesome-comment-alt scnd-font-color"></span>Chat</p></a></Link></li>
+                        <li><a className="views aprofile" ><p><span className="icon entypo-vcard scnd-font-color"></span>Info</p></a></li>
+                        <li><a className="likes aprofile" ><p><span className="icon entypo-note-beamed scnd-font-color"></span>Songs</p></a></li>
+                    </ul>
+                </div>
+        
+      </form>
+
+
     <h3>Posts</h3>
     
     <hr />
@@ -32,19 +63,50 @@ const UserDetail = () => {
               <Link className="text-reset text-decoration-none" to={`/post/${post.id}`}>
                 <p className="m-0">{i + 1}. {post.title}</p>
                 <img src={post.image} alt=""></img>
-                
+
               </Link>
             </li>
           )}
         )}
       </ul>
     </div>
-      <Rightbar style={{
-        background:"red"
-      }} user={user}/>
+      
 
   </div>
   );
 };
 
 export default UserDetail;
+
+
+
+
+
+<>
+      {/* <div className="background-profile">
+        <div className="shape"></div>
+        <div className="shape"></div>
+      </div> */}
+      {/* <div className="profile"><p>{JSON.stringify(user)}</p></div> */}
+
+      {/* <form className="profile-form">
+      <div className="profile block">
+      <Link to="/editprofile">
+                    <a className="add-button aprofile" ><span className="icon entypo-cog scnd-font-color"></span></a>
+                    </Link>
+                    <div className="profile-picture big-profile-picture clear">
+                        <img width="150px" alt="picture" src={user.avatar} />
+                    </div>
+                    <h1 className="user-name h1profile">{user.name}</h1>
+                    <div className="profile-description">
+                        <p className="scnd-font-color">{user.email}</p>
+                    </div>
+                    <ul className="profile-options horizontal-list">
+                        <li><a className="comments aprofile" ><p><span className="icon fontawesome-comment-alt scnd-font-color"></span>Chat</p></a></li>
+                        <li><a className="views aprofile" ><p><span className="icon entypo-vcard scnd-font-color"></span>Info</p></a></li>
+                        <li><a className="likes aprofile" ><p><span className="icon entypo-note-beamed scnd-font-color"></span>Songs</p></a></li>
+                    </ul>
+                </div>
+        
+      </form> */}
+    </>

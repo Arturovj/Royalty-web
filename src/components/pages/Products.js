@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getAllUsers } from "../../services/UsersService";
 import { Link } from "react-router-dom";
 import "./Products.scss";
+import UserDetail from "./User/UserDetail";
 
 const Products = () => {
   const [users, setUsers] = useState([]);
@@ -21,28 +22,31 @@ const Products = () => {
     </h1>
     <div className="container-products">
         {users.map((user, i) => {
+          if(user.verified) {
+            console.log('email', user.email)
+          }
           return (
             <div key={user._id}>
               <div className="single-card-products" key={user._id}>
                   <div className="card-img-products ">
                     <img src={user.avatar} />
                   </div>
+                  {user.email}
+                  {user.verified && "VERIFIED"}
                   <div className="content-products">
-                    
                     <p>{user.genre}</p>
                     <Link to={`/users/${user.id}`} className="btn btn-primary">
                       View posts
                     </Link>
                   </div>
-                  <div>
-                  <div className="title-products">{user.name}</div>
-                  <div>
-                  <p className="card-text">{user.posts.length} Posts</p>
-                  </div>
-                 
-                <div className="card-footer text-muted">
-                  Last update {i + 1} days ago
-                </div>
+                  <div className="container-info">
+                    <div className="title-products">{user.name}</div>
+                    <div>
+                      <p className="card-text">{user.posts.length} Posts</p>
+                    </div>
+                    <div className="card-footer text-muted">
+                      Last update {i + 1} days ago
+                    </div>
                 </div>
               </div>
             </div>

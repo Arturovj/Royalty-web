@@ -1,0 +1,83 @@
+.review-container {
+    background-color: white;
+}
+
+
+
+.review-list {
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    min-width: 60vw;
+    overflow-x: scroll;
+    background:
+        /* top, transparent black, faked with gradient */
+        linear-gradient(rgb(255, 255, 255),
+            rgb(255, 255, 255));
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+
+
+    &::-webkit-scrollbar {
+        display: none;
+        /* for Chrome, Safari, and Opera */
+    }
+
+
+    .review-list2 {
+
+        height: 300px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        padding: 5rem;
+
+        margin-top: 2rem;
+        scroll-snap-align: center;
+        margin: 2rem;
+        box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+        -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+        filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+        border-radius: 15px;
+        transition: all 0.2s ease;
+
+        p {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-bottom: 0;
+            margin-left: 1rem;
+        }
+    }
+
+    .review-list2:hover {
+        box-shadow: none;
+    }
+
+    a:link,
+    a:visited,
+    a:active {
+        text-decoration: none;
+
+    }
+
+    .list-container {
+        width: 10rem;
+    }
+
+    .review-list2 {
+        background:
+            /* top, transparent black, faked with gradient */
+            linear-gradient(rgba(255, 255, 255, 0.4),
+                rgba(255, 255, 255, 0.5)),
+            /* bottom, image */
+
+    }
+}

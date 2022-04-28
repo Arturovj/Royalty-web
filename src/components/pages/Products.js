@@ -31,10 +31,10 @@ const Products = () => {
                   <div className="card-img-products ">
                     <img src={user.avatar} />
                   </div>
-                  {user.email}
                   {user.verified && "VERIFIED"}
                   <div className="content-products">
                     <p>{user.genre}</p>
+                    <div className="title-products">{user.name}</div>
                     <Link to={`/users/${user.id}`} className="btn btn-primary">
                       View posts
                     </Link>

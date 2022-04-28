@@ -1,8 +1,12 @@
 import React from "react";
 import "./ReviewBox.scss";
+import Rating from '@mui/material/Rating';
+
 
 export default function ReviewBox(props) {
   const { userReview } = props;
+
+
 
   return (
     <>
@@ -19,7 +23,7 @@ export default function ReviewBox(props) {
                 <small style={{color: "black"}}>{userReview.review}</small>
               </div>
               <div>
-                <small style={{color: "black"}}>{userReview.stars}</small>
+              <Rating name="read-only" value={userReview.stars} readOnly />
               </div>
             </div>
           </div>

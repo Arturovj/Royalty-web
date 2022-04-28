@@ -4,7 +4,7 @@
         "image": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         "name": "Arturo",
         "review": "frasecita con review",
-        "stars": "5"
+        "stars": "4"
     },
     {   
         "id": "2",
@@ -15,8 +15,8 @@
     },
     {   
         "id": "3",
-        "image": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "name": "Pablo",
+        "image": "https://www.seekpng.com/png/detail/402-4024748_how-to-apply-the-porefessional-face-primer-persons.png",
+        "name": "Lisa",
         "review": "frasecita con review",
         "stars": "5"
     },
@@ -24,29 +24,29 @@
         "id": "4",
         "image": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         "name": "Manuel",
-        "review": "frasecita con review",
-        "stars": "5"
+        "review": "Royalty changed my life!",
+        "stars": "4"
     },
     {   
         "id": "5",
-        "image": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "name": "",
-        "review": "frasecita con review",
+        "image": "https://www.seekpng.com/png/detail/402-4024748_how-to-apply-the-porefessional-face-primer-persons.png",
+        "name": "Lisa",
+        "review": "Now i can sell my artists royalties!",
         "stars": "5"
     },
     {
         "id": "6",
         "image": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         "name": "Arturo",
-        "review": "frasecita con review",
-        "stars": "5"
+        "review": "Best app ever",
+        "stars": "4"
     },
     {   
         "id": "7",
-        "image": "",
+        "image": "https://cdn3.careeraddict.com/uploads/article/54483/medium-man-playing-acoustic-guitar.jpg",
         "name": "Sergio",
         "review": "frasecita con review",
-        "stars": "5"
+        "stars": "4"
     },
     {   
         "id": "8",

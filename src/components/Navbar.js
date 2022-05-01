@@ -60,11 +60,11 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link
-                to="/services"
+                to="/nft"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Services
+                Nft
               </Link>
             </li>
             <li className="nav-item">

@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/pages/Home";
-import Services from "./components/pages/Services";
+import Nft from "./components/pages/Nft";
 import Products from "./components/pages/Products";
 import SignUp from "./components/pages/SignUp/SignUp";
 import Login from "./components/pages/Login/Login";
@@ -39,15 +39,16 @@ function App() {
              </Route>
 
           <Route path="/" element={<Home />}></Route>
-          <Route path="/services" element={<Services />} />
+          
           <Route path="/products" element={<Products />} />
-          <Route path="/" element={<ProtectedRoute />}>
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/users/:id" element={<UserDetail/>}/>
-            <Route path="/songs" element={<Songs />} />
-            <Route path="/messenger" element={<Messenger />}></Route>
-            <Route path="/post/:id" element={<PostDetail />}></Route>
-            <Route path="/addMusic" element={<NewPost/>}></Route>
+            <Route path="/" element={<ProtectedRoute />}>
+              <Route path="/nft" element={<Nft/>} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/users/:id" element={<UserDetail/>}/>
+              <Route path="/songs" element={<Songs />} />
+              <Route path="/messenger" element={<Messenger />}></Route>
+              <Route path="/post/:id" element={<PostDetail />}></Route>
+              <Route path="/addMusic" element={<NewPost/>}></Route>
           </Route>
         </Routes>
       )}

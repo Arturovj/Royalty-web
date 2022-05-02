@@ -2,6 +2,7 @@ import React from 'react';
 import './Footer.css';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
+import { Link as Link1} from 'react-scroll'
 
 
 function Footer() {
@@ -32,7 +33,7 @@ function Footer() {
           <div className='footer-link-items'>
             <h2>About Us</h2>
             <Link to='/faq'>F.A.Q</Link>
-            <Link to='/' id='review'>Testimonials</Link>
+            <Link1 to='review' spy={true} style={{cursor: 'pointer'}} smooth={true} offset={-150} duration={500}>Testimonials</Link1>
             <Link to='/'>Careers</Link>
             <Link to='/'>Investors</Link>
             <Link to='/'>Terms of Service</Link>

@@ -1,7 +1,11 @@
 import React from 'react'
 
-export default function HomeNft() {
+export default function HomeNft(props) {
   return (
-    <div>HomeNft</div>
+      <>
+    <h1>Welcome</h1>
+      <p>{props.currentAccount}</p>
+      <p>{props.balance} ETH</p>
+      </>
   )
 }

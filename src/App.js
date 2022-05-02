@@ -18,6 +18,7 @@ import Messenger from "./components/pages/messenger/messenger";
 import UserDetail from "./components/pages/User/UserDetail";
 import PostDetail from "./components/pages/Artists/PostDetail";
 import { Toaster } from "react-hot-toast";
+import Accordion from "./components/Faq/Faq"
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
              </Route>
 
           <Route path="/" element={<Home />}></Route>
+          <Route path="/faq" element={<Accordion/>}></Route>
           
           <Route path="/products" element={<Products />} />
             <Route path="/" element={<ProtectedRoute />}>
@@ -49,6 +51,7 @@ function App() {
               <Route path="/messenger" element={<Messenger />}></Route>
               <Route path="/post/:id" element={<PostDetail />}></Route>
               <Route path="/addMusic" element={<NewPost/>}></Route>
+              
           </Route>
         </Routes>
       )}

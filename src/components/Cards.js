@@ -10,36 +10,36 @@ function Cards() {
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItem
-              src='images/img-9.jpg'
+              src='images/metallica.jpg'
               text='Best rock tunes'
               label='Rock'
-              path='/services'
+              path='/products'
             />
             <CardItem
-              src='images/img-2.jpg'
+              src='images/daftpunk.jpg'
               text='Best electronic tunes'
               label='Electronic'
-              path='/services'
+              path='/products'
             />
           </ul>
           <ul className='cards__items'>
             <CardItem
-              src='images/img-3.jpg'
+              src='images/dualipa.jpg'
               text='Best pop tunes'
               label='Pop'
-              path='/services'
+              path='/products'
             />
             <CardItem
-              src='images/img-4.jpg'
+              src='images/badbunny.jpg'
               text='Best Trap tunes'
               label='Trap'
               path='/products'
             />
             <CardItem
-              src='images/img-8.jpg'
+              src='images/kavinsky.jpg'
               text='Best Synthwave tunes'
               label='Synthwave'
-              path='/sign-up'
+              path='/products'
             />
           </ul>
         </div>

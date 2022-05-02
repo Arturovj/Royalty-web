@@ -6,7 +6,7 @@ import './ReviewsSection.scss'
 export default function ReviewsSection() {
   return (
     <>
-      <div className="review-container">
+      <div className="review-container" id="review">
         <h1 style={{color: "black"}}> Reviews </h1>
         <div className="review-list">
           {reviewsData.map((userReview, index) => (

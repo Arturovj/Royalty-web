@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getAllUsers } from "../../services/UsersService";
 import { Link } from "react-router-dom";
 import "./Products.scss";
-import UserDetail from "./User/UserDetail";
+
 
 const Products = () => {
   const [users, setUsers] = useState([]);

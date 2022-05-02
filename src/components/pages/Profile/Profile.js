@@ -2,6 +2,8 @@ import React from "react";
 import "./Profile.scss";
 import { useAuthContext } from "../../../contexts/AuthContext";
 import { Link } from "react-router-dom";
+import ModalApp from "../../Modal/ModalApp";
+
 
 const Profile = () => {
   const { user } = useAuthContext();
@@ -11,16 +13,20 @@ const Profile = () => {
   return (
     <>
       <div className="background-profile">
+        
         <div className="shape"></div>
         <div className="shape"></div>
       </div>
       {/* <div className="profile"><p>{JSON.stringify(user)}</p></div> */}
-
+      <div>
+     
       <form className="profile-form">
       <div className="profile block">
       <Link to="/editprofile">
+      
                     <a className="add-button aprofile" ><span className="icon entypo-cog scnd-font-color"></span></a>
                     </Link>
+                    
                     <div className="profile-picture big-profile-picture clear">
                         <img width="150px" alt="picture" src={user.avatar} />
                     </div>
@@ -34,8 +40,12 @@ const Profile = () => {
                         <li><a className="likes aprofile" ><p><span className="icon entypo-note-beamed scnd-font-color"></span>Songs</p></a></li>
                     </ul>
                 </div>
-        
+                
+
       </form>
+
+      </div>
+      <ModalApp></ModalApp>
     </>
   );
 };

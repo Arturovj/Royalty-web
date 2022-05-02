@@ -135,7 +135,7 @@ export default function Messenger() {
                 
               </div>
               <form onSubmit={handleSubmit} className="chatBoxBottom">
-              <input
+              <input style={{ color: 'black'}}
                 className="chatMessageInput"
                 placeholder="write something..."
                 onChange={(e) => setNewMessage(e.target.value)}

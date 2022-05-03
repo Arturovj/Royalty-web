@@ -43,7 +43,7 @@ function Footer() {
             <Link to='/'>Contact</Link>
             <Link to='/'>Support</Link>
             <Link to='/'>Destinations</Link>
-            <Link to='/'>Sponsorships</Link>
+            <Link to='/sponsorships'>Sponsorships</Link>
           </div>
         </div>
         <div className='footer-link-wrapper'>

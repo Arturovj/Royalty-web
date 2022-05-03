@@ -19,6 +19,7 @@ import UserDetail from "./components/pages/User/UserDetail";
 import PostDetail from "./components/pages/Artists/PostDetail";
 import { Toaster } from "react-hot-toast";
 import Accordion from "./components/Faq/Faq"
+import SliderComponent from "./components/Slider/SliderComponent";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
 
           <Route path="/" element={<Home />}></Route>
           <Route path="/faq" element={<Accordion/>}></Route>
+          <Route path="/sponsorships" element={<SliderComponent/>}></Route>
           
           <Route path="/products" element={<Products />} />
             <Route path="/" element={<ProtectedRoute />}>

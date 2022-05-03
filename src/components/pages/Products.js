@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getAllUsers } from "../../services/UsersService";
 import { Link } from "react-router-dom";
 import "./Products.scss";
+import verifiedpng from './Blue_Badge.png'
 
 
 const Products = () => {
@@ -27,11 +28,14 @@ const Products = () => {
           }
           return (
             <div key={user._id}>
+              
               <div className="single-card-products" key={user._id}>
+              {user.verified && <img className="verifiedpng" src={verifiedpng}/>}
+              
                   <div className="card-img-products ">
                     <img src={user.avatar} />
                   </div>
-                  {user.verified && "VERIFIED"}
+                 
                   <div className="content-products">
                     <p>{user.genre}</p>
                     <div className="title-products">{user.name}</div>

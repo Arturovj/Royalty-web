@@ -1,10 +1,13 @@
 .modalButton {
   position: fixed;
-  top: 60%;
-  left: 80%;
+  top: 92%;
+  left: 5%;
   transform: translate(-50%, -50%);
   z-index: -1;
-  padding: 12px 24px;
+  padding: 8px 8px;
+  border-radius: 50px;
+  background: linear-gradient(#1845ad, #23a2f6);
+ 
 }
 
 
@@ -21,7 +24,7 @@
   width: 100%;
   position: fixed;
   top: 60%;
-  left: 80%;
+  left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   background-color: #ffffff;
@@ -29,12 +32,12 @@
   border-radius: 8px;
 }
 
-/* img {
+.modal-img {
   width: 250px;
   object-fit: cover;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-} */
+}
 
 .modalRight {
   width: 100%;
@@ -69,7 +72,7 @@
 }
 
 .btnPrimary {
-  background-color: #411b57;
+  background: linear-gradient(#1845ad, #23a2f6);
   color: white;
 }
 

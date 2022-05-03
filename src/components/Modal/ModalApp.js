@@ -8,13 +8,13 @@ function ModalApp() {
 
 
   return (
-    <div>
+    <div >
       <button 
       onClick={() => setOpenModal(true)} 
       className='modalButton'>
-        Modal
+        <i class="fa fa-check fa-3x" aria-hidden="true"></i>
       </button>
-      <Modal 
+      <Modal  
       open={openModal} 
       onClose={() => setOpenModal(false)} />
       </div>

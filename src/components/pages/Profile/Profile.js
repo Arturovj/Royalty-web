@@ -45,7 +45,9 @@ const Profile = () => {
       </form>
 
       </div>
-      <ModalApp></ModalApp>
+      <div style={{cursor: 'pointer'}}>
+      <ModalApp ></ModalApp>
+      </div>
     </>
   );
 };

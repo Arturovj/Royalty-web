@@ -1,5 +1,5 @@
 import React from 'react';
-import nft from './nft.jpg';
+import nft from './nft1.jpg';
 
 const Modal = ({ open, onClose }) => {
   if (!open) return null;
@@ -11,23 +11,23 @@ const Modal = ({ open, onClose }) => {
         }}
         className='modalContainer'
       >
-        <img src={nft} alt='/' />
+        <img className='modal-img' src={nft} alt='/' />
         <div className='modalRight'>
-          <p className='closeBtn' onClick={onClose}>
+          <p style={{cursor: 'pointer'}} className='closeBtn' onClick={onClose}>
             X
           </p>
           <div className='content'>
-            <p>Do you want a</p>
-            <h1>$20 CREDIT</h1>
-            <p>for your first tade?</p>
+            <p>Do you want </p>
+            <h1>to get VERIFIED?</h1>
+            <p>send us your last trimester statement to admin@admin.com</p>
           </div>
           <div className='btnContainer'>
-            <button className='btnPrimary'>
-              <span className='bold'>YES</span>, I love NFT's
+            <button style={{cursor: 'pointer'}} onClick={onClose} className='btnPrimary'>
+              <span className='bold'>CLOSE</span>
             </button>
-            <button className='btnOutline'>
-              <span className='bold'>NO</span>, thanks
-            </button>
+            {/* <button className='btnOutline'>
+              <span className='bold'></span>
+            </button> */}
           </div>
         </div>
       </div>

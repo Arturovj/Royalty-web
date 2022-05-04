@@ -1,10 +1,11 @@
 
 import React, { useState, useEffect } from "react";
-import HomeNft from "../HomeNft/HomeNft";
 import LoginNft from "../LoginNft/LoginNft";
 import "./Nft.css"
 import Web3 from "web3"
-import ModalApp from "../Modal/ModalApp";
+import MintNft from "../../solidity/frontend/pages";
+import HomeNft from "../HomeNft/HomeNft";
+
 
 
 export default function Nft() {
@@ -87,7 +88,7 @@ export default function Nft() {
               {isConnected && <HomeNft currentAccount={currentAccount}
             currentNetwork={getCurrentNetwork(chainId)} />}
           </div>
-      <ModalApp></ModalApp>
+        <MintNft></MintNft>
       </div>
     </>
   );

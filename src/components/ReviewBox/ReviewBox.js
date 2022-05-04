@@ -20,7 +20,7 @@ export default function ReviewBox(props) {
                 <img className="userReviewImage" src={userReview.image} />
               </div>
               <div>
-                <small style={{color: "black"}}>{userReview.review}</small>
+                <small style={{color: "black"}}><i style={{color: "black"}} class="fa fa-quote-left" aria-hidden="true"></i>{userReview.review}<i style={{color: "black"}} class="fa fa-quote-right" aria-hidden="true"></i></small>
               </div>
               <div>
               <Rating name="read-only" value={userReview.stars} readOnly />

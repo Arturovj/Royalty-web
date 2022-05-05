@@ -26,6 +26,7 @@
     "jwt-decode": "^3.1.2",
     "os-browserify": "^0.3.0",
     "react": "^17.0.0",
+    "react-cookie-consent": "^7.4.1",
     "react-dom": "^17.0.0",
     "react-hook-form": "^7.29.0",
     "react-hot-toast": "^2.2.0",

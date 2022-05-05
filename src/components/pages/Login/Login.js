@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import InputGroup from "../../InputGroup/InputGroup";
 import * as yup from "yup";
 import { login as loginRequest } from "../../../services/AuthService";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../../contexts/AuthContext";
 
 const schema = yup.object({
@@ -76,6 +76,9 @@ function Login() {
 
 
         <button className={`login-btn btn-${isSubmitting} ? 'secondary' : 'primary'`}>{isSubmitting ? 'Login...' : 'Submit'}</button>
+        <div className="register-link">
+        <Link  to="/sign-up">Don't have an account yet? Register</Link>
+        </div>
     </form>
 
       

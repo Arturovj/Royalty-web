@@ -1,5 +1,8 @@
 .rightbar {
     flex: 3.5;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   
   .rightbarWrapper {

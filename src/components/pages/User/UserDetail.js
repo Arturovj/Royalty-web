@@ -1,95 +1,122 @@
-import React from 'react';
+import React from "react";
 import "./UserDetail.scss";
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { getUserDetail } from '../../../services/UsersService';
-import { Link, useParams } from 'react-router-dom';
-import Rightbar from '../AddFriends/AddFriends';
- import { useAuthContext } from '../../../contexts/AuthContext';
+import { useState } from "react";
+import { useEffect } from "react";
+import { getUserDetail } from "../../../services/UsersService";
+import { Link, useParams } from "react-router-dom";
+import Rightbar from "../AddFriends/AddFriends";
+import { useAuthContext } from "../../../contexts/AuthContext";
 
 const UserDetail = () => {
-  const [currentUser, setCurrentUser] = useState({})
-   const { user } = useAuthContext()
-  const { id } = useParams()
+  const [currentUser, setCurrentUser] = useState({});
+  const { user } = useAuthContext();
+  const { id } = useParams();
 
   useEffect(() => {
-    getUserDetail(id)
-      .then(user => {
-        setCurrentUser(user)
-      })
-  }, [])
-  
+    getUserDetail(id).then((user) => {
+      setCurrentUser(user);
+    });
+  }, []);
+
   return (
     <div className="Profile">
-    <div className="background-profile">
+      <div className="background-profile">
         <div className="shape"></div>
         <div className="shape"></div>
       </div>
-      <Rightbar style={{
-        background:"red"
-      }} user={user}/>
+     
 
-
- <form className="profile-form">
-      <div className="profile block">
-      <Link to="/editprofile">
-                    <a className="add-button aprofile" ><span className="icon entypo-cog scnd-font-color"></span></a>
-                    </Link>
-                    <div className="profile-picture big-profile-picture clear">
-                        <img width="150px" alt="picture" src={currentUser.avatar} />
-                    </div>
-                    <h1 className="user-name h1profile">{currentUser.name}</h1>
-                    <div className="profile-description">
-                        <p className="scnd-font-color">{currentUser.email}</p>
-                    </div>
-                    <ul className="profile-options horizontal-list">
-                        <li><Link to="/messenger" style={{ textDecoration: 'none' }}><a className="comments aprofile" ><p><span className="icon fontawesome-comment-alt scnd-font-color"></span>Chat</p></a></Link></li>
-                        <li><a className="views aprofile" ><p><span className="icon entypo-vcard scnd-font-color"></span>Info</p></a></li>
-                        <li><a className="likes aprofile" ><p><span className="icon entypo-note-beamed scnd-font-color"></span>Songs</p></a></li>
-                    </ul>
-                </div>
-        
-      </form>
-
-
-    <h3>Posts</h3>
-    
-    <hr />
-    <div>
-      <ul className="list-group">
-        {currentUser.posts?.map((post, i) => {
-          return (
-            <li key={post.id} className="list-group-item d-flex justify-content-between align-items-center">
-              <Link className="text-reset text-decoration-none" to={`/post/${post.id}`}>
-                <p className="m-0">{i + 1}. {post.title}</p>
-                <img src={post.image} alt=""></img>
-
+      <form className="profile-form">
+      <Rightbar
+        style={{
+          background: "red",
+        }}
+        user={user}
+      />
+        <div className="profile block">
+          <Link to="/editprofile">
+            <a className="add-button aprofile">
+              <span className="icon entypo-cog scnd-font-color"></span>
+            </a>
+          </Link>
+          <div className="profile-picture big-profile-picture clear">
+            <img width="150px" alt="picture" src={currentUser.avatar} />
+          </div>
+          <h1 className="user-name h1profile">{currentUser.name}</h1>
+          <div className="profile-description">
+            <p className="scnd-font-color">{currentUser.email}</p>
+          </div>
+          <ul className="profile-options horizontal-list">
+            <li>
+              <Link to="/messenger" style={{ textDecoration: "none" }}>
+                <a className="comments aprofile">
+                  <p>
+                    <span className="icon fontawesome-comment-alt scnd-font-color"></span>
+                    Chat
+                  </p>
+                </a>
               </Link>
             </li>
-          )}
-        )}
-      </ul>
-    </div>
-      
+            <li>
+              <a className="views aprofile">
+                <p>
+                  <span className="icon entypo-vcard scnd-font-color"></span>
+                  Info
+                </p>
+              </a>
+            </li>
+            <li>
+              <a className="likes aprofile">
+                <p>
+                  <span className="icon entypo-note-beamed scnd-font-color"></span>
+                  Songs
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </form>
 
-  </div>
+      <h3 className="posts-container">Posts</h3>
+      <div>
+        <hr />
+        <div className="post-song">
+          <ul className="list-group">
+            {currentUser.posts?.map((post, i) => {
+              return (
+                <li
+                  key={post.id}
+                  className="li-content"
+                >
+                  <Link
+                    className=""
+                    to={`/post/${post.id}`}
+                  >
+                    <div className="">
+                      {i + 1}. {post.title}
+                    </div>
+                    <img src={post.image} alt=""></img>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 };
 
 export default UserDetail;
 
-
-
-
-
 <>
-      {/* <div className="background-profile">
+  {/* <div className="background-profile">
         <div className="shape"></div>
         <div className="shape"></div>
       </div> */}
-      {/* <div className="profile"><p>{JSON.stringify(user)}</p></div> */}
+  {/* <div className="profile"><p>{JSON.stringify(user)}</p></div> */}
 
-      {/* <form className="profile-form">
+  {/* <form className="profile-form">
       <div className="profile block">
       <Link to="/editprofile">
                     <a className="add-button aprofile" ><span className="icon entypo-cog scnd-font-color"></span></a>
@@ -109,4 +136,4 @@ export default UserDetail;
                 </div>
         
       </form> */}
-    </>
+</>;

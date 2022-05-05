@@ -5,7 +5,7 @@ import { yupResolver} from "@hookform/resolvers/yup"
 import InputGroup from '../../InputGroup/InputGroup';
 import * as yup from "yup";
 import { register as registerRequest } from '../../../services/AuthService'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 
@@ -112,6 +112,11 @@ return(
 
 
         <button className={`register-btn btn-${isSubmitting} ? 'secondary' : 'primary'`}>{isSubmitting ? 'Creating user...' : 'Submit'}</button>
+
+        <div className="login-link">
+        <Link to="/login">Already have an account? Login</Link>
+        </div>
+    
     </form>
 
   </div>

@@ -15,10 +15,11 @@ const PostDetail = () => {
     console.log(post)
 
     return (
-        <div>
+        <div className='post-container'>
+            <div className='post'>
             {post.title}
             <img src={post.image} alt=""></img>
-            
+            </div>
         </div>
     )
 

@@ -18,9 +18,9 @@ import Messenger from "./components/pages/messenger/messenger";
 import UserDetail from "./components/pages/User/UserDetail";
 import PostDetail from "./components/pages/Artists/PostDetail";
 import { Toaster } from "react-hot-toast";
-import Accordion from "./components/Faq/Faq"
+import Accordion from "./components/Faq/Faq";
 import SliderComponent from "./components/Slider/SliderComponent";
-
+import CookieConsent, { Cookies } from "react-cookie-consent";
 
 function App() {
   const { isAuthenticationFetched } = useAuthContext();
@@ -28,37 +28,46 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Contenido/>
-      <Toaster/>
+      <Contenido />
+      <Toaster />
 
       {!isAuthenticationFetched ? (
         <p>Loading...</p>
       ) : (
         <Routes>
-              <Route element={<UnProtectedRoute/>}>
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-             </Route>
+          <Route element={<UnProtectedRoute />}>
+            <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+          </Route>
 
           <Route path="/" element={<Home />}></Route>
-          <Route path="/faq" element={<Accordion/>}></Route>
-          <Route path="/sponsorships" element={<SliderComponent/>}></Route>
-          
+          <Route path="/faq" element={<Accordion />}></Route>
+          <Route path="/sponsorships" element={<SliderComponent />}></Route>
+
           <Route path="/products" element={<Products />} />
-            <Route path="/" element={<ProtectedRoute />}>
-              <Route path="/nft" element={<Nft/>} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/users/:id" element={<UserDetail/>}/>
-              <Route path="/songs" element={<Songs />} />
-              <Route path="/messenger" element={<Messenger />}></Route>
-              <Route path="/post/:id" element={<PostDetail />}></Route>
-              <Route path="/addMusic" element={<NewPost/>}></Route>
-              
+          <Route path="/" element={<ProtectedRoute />}>
+            <Route path="/nft" element={<Nft />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/users/:id" element={<UserDetail />} />
+            <Route path="/songs" element={<Songs />} />
+            <Route path="/messenger" element={<Messenger />}></Route>
+            <Route path="/post/:id" element={<PostDetail />}></Route>
+            <Route path="/addMusic" element={<NewPost />}></Route>
           </Route>
         </Routes>
       )}
 
-      
+      <CookieConsent
+        location="bottom"
+        buttonText="Sure man!!"
+        cookieName="myAwesomeCookieName2"
+        style={{ background: "#2B373B" }}
+        buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+        expires={150}
+      >
+        This website uses cookies to enhance the user experience.{" "}
+        <span style={{ fontSize: "10px" }}></span>
+      </CookieConsent>
     </div>
   );
 }

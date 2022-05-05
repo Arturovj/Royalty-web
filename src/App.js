@@ -21,12 +21,16 @@ import { Toaster } from "react-hot-toast";
 import Accordion from "./components/Faq/Faq";
 import SliderComponent from "./components/Slider/SliderComponent";
 import CookieConsent, { Cookies } from "react-cookie-consent";
+import { getLibrary } from './components/LoginNft/connector';
+import { Web3ReactProvider } from "@web3-react/core";
 
 function App() {
   const { isAuthenticationFetched } = useAuthContext();
 
   return (
     <div className="App">
+
+  <Web3ReactProvider getLibrary={getLibrary}>
       <Navbar />
       <Contenido />
       <Toaster />
@@ -68,6 +72,8 @@ function App() {
         This website uses cookies to enhance the user experience.{" "}
         <span style={{ fontSize: "10px" }}></span>
       </CookieConsent>
+
+      </Web3ReactProvider>
     </div>
   );
 }

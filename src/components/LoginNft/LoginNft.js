@@ -21,6 +21,14 @@ export default function LoginNft (props) {
     window.localStorage.removeItem('previouslyConnected');
   };
 
+
+  const handleClick = () => {
+    if (!active){ connect()} 
+    else {
+      disconnect()
+    }
+  }
+
   const getBalance = useCallback(async () => {
     const toSet = await library.eth.getBalance(account);
     setBalance((toSet / 1e18).toFixed(2));
@@ -41,8 +49,9 @@ export default function LoginNft (props) {
       <div className='login-nft'>
         {active && <span>{truncatedAddress}</span>}
         <button
-          onClick={connect}
-        >
+          onClick={handleClick}
+          
+        > 
           {active ? 'Disconnect' : 'Connect'}
         </button>
 

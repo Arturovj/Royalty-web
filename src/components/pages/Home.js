@@ -13,7 +13,6 @@ function Home() {
       <Cards />
       <ReviewsSection/>
       <Footer />
-
     </>
   );
 }

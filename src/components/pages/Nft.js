@@ -79,6 +79,7 @@ export default function Nft() {
     <>
       <div className="nft-container">
         <h1 className="nft-title">WEB3</h1>
+        
 
           <div>
               {!isConnected && <LoginNft onLogin={onLogin} onLogout={onLogout}/>}

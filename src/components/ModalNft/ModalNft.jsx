@@ -1,7 +1,7 @@
 import React from 'react';
-import nft from './nft1.jpg'
+import ethereum from './nft2.png'
 
-const Modal = ({ open, onClose }) => {
+const ModalNft = ({ open, onClose }) => {
   if (!open) return null;
   return (
     <div onClick={onClose} className='overlay'>
@@ -11,15 +11,15 @@ const Modal = ({ open, onClose }) => {
         }}
         className='modalContainer'
       >
-        <img className='modal-img' src={nft} alt='/' />
+        <img className='modal-img' src={ethereum} alt='/' />
         <div className='modalRight'>
           <p style={{cursor: 'pointer'}} className='closeBtn' onClick={onClose}>
             X
           </p>
           <div className='content'>
             <p>Do you want </p>
-            <h1>to get VERIFIED?</h1>
-            <p>send us your last trimester statement to admin@admin.com</p>
+            <h1>to get minted?</h1>
+            <p>send us your proyects to admin@admin.com</p>
           </div>
           <div className='btnContainer'>
             <button style={{cursor: 'pointer'}} onClick={onClose} className='btnPrimary'>
@@ -35,4 +35,4 @@ const Modal = ({ open, onClose }) => {
   );
 };
 
-export default Modal;
+export default ModalNft;

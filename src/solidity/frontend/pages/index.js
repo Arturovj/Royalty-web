@@ -3,6 +3,7 @@ import { useWeb3React } from "@web3-react/core";
 import useRoyaltys from "../hooks/useRoyaltys";
 import "./index.scss";
 import toast from "react-hot-toast";
+import ModalAppNft from "../../../components/ModalNft/ModalApps";
 
 const MintNft = () => {
   const royaltys = useRoyaltys();
@@ -27,13 +28,21 @@ const MintNft = () => {
 
   return (
     <>
+    <div className="modal-nft-button">
+    <ModalAppNft/>
+    </div>
       <div className="song-nft-container">
-        <div className="card jvliah animated"></div>
+      
+        <div className="card jvliah animated">
+          
+        </div>
+        
         <div className="mint-button">
-        <button onClick={() => Mint()}>Mintear NFT</button>
+        <button onClick={() => Mint()}>Mintear NFT </button>
         </div>
         
       </div>
+      
     </>
   );
 };

@@ -3,6 +3,7 @@ import { connector } from './connector';
 import './LoginNft.css';
 import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core';
 import useTruncatedAddress from '../../solidity/frontend/hooks/useTruncatedAddress';
+import toast from "react-hot-toast";
 
 export default function LoginNft (props) {
   const [balance, setBalance] = useState(0);
@@ -23,9 +24,10 @@ export default function LoginNft (props) {
 
 
   const handleClick = () => {
-    if (!active){ connect()} 
+    if (!active){ connect(toast.success(`Connected Metamask`)) 
+    } 
     else {
-      disconnect()
+      disconnect(toast.success(`Disconnected Metamask`))
     }
   }
 

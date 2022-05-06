@@ -21,7 +21,7 @@ export default function Rightbar({ user }) {
   useEffect(() => {
     const getFriends = async () => {
       try {
-        const friendList = await axios.get("http://localhost:3001/api/users/friends/" + user._id);
+        const friendList = await axios.get("https://royalty-api.onrender.com/api/users/friends/" + user._id);
         setFriends(friendList.data);
       } catch (err) {
         console.log(err);
@@ -33,12 +33,12 @@ export default function Rightbar({ user }) {
   const handleClick = async () => {
     try {
       if (followed) {
-        await axios.put(`http://localhost:3001/api/users/me/unfollow`, {
+        await axios.put(`https://royalty-api.onrender.com/api/users/me/unfollow`, {
           userId: id,
         },{headers:{"Authorization" : `Bearer ${getAccessToken()}`}});
         dispatch({ type: "UNFOLLOW", payload: id });
       } else {
-        await axios.put(`http://localhost:3001/api/users/me/follow`, {
+        await axios.put(`https://royalty-api.onrender.com/api/users/me/follow`, {
           userId: id,
         },{headers:{"Authorization" : `Bearer ${getAccessToken()}`}});
         dispatch({ type: "FOLLOW", payload: id });

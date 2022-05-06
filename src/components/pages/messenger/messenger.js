@@ -20,7 +20,7 @@ export default function Messenger() {
   const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        socket.current = io("ws://localhost:8900")
+        socket.current = io("https://sockets-lby7.onrender.com") 
         socket.current.on("getMessage", data =>{
             setArrivalMessage({
                 sender: data.senderId,
@@ -53,7 +53,7 @@ export default function Messenger() {
     const getConversations = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3001/api/conversations/" + user._id
+          "https://royalty-api.onrender.com/api/conversations/" + user._id
         );
         setConversations(res.data);
         console.log(res);
@@ -67,7 +67,7 @@ export default function Messenger() {
   useEffect(() => {
       const getMessages = async ()=> {
       try{
-          const res = await axios.get("http://localhost:3001/api/messages/" + currentChat?._id)
+          const res = await axios.get("https://royalty-api.onrender.com/api/messages/" + currentChat?._id)
           setMessages(res.data)
       }catch(err){
           console.log(err)
@@ -93,7 +93,7 @@ export default function Messenger() {
       })
 
       try{
-        const res = await axios.post("http://localhost:3001/api/messages/", message)
+        const res = await axios.post("https://royalty-api.onrender.com/api/messages/", message)
         setMessages([...messages, res.data])
         setNewMessage("")
       }catch(err){

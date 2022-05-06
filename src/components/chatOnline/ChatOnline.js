@@ -9,7 +9,7 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
   useEffect(() => {
     const getFriends = async () => {
       const res = await axios.get(
-        "http://localhost:3001/api/users/friends/" + currentId
+        "https://royalty-api.onrender.com/api/users/friends/" + currentId
       );
       setFriends(res.data);
     };
@@ -27,17 +27,17 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
   
 
       const res = await axios.get(
-        `http://localhost:3001/api/conversations/find/${currentId}/${user._id}`
+        `https://royalty-api.onrender.com/api/conversations/find/${currentId}/${user._id}`
       );
      
 
         if(!res.data){
-          const foo = await axios.post(`http://localhost:3001/api/conversations/`, {
+          const foo = await axios.post(`https://royalty-api.onrender.com/api/conversations/`, {
             receiverId: currentId,
             senderId: user._id,
           });
           const res = await axios.get(
-            `http://localhost:3001/api/conversations/find/${currentId}/${user._id}`
+            `https://royalty-api.onrender.com/api/conversations/find/${currentId}/${user._id}`
           );
           setCurrentChat(res.data);
         } else {

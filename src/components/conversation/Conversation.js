@@ -11,7 +11,7 @@ export default function Conversation({ conversation, currentUser }) {
 
     const getUser = async () => {
       try{
-        const res = await axios("http://localhost:3001/api/users/" + friendId)
+        const res = await axios("https://royalty-api.onrender.com/api/users/" + friendId)
         setUser(res.data)
       } catch(err){
         console.log(err)

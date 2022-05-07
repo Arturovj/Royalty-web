@@ -30,7 +30,11 @@ const Products = () => {
     <h1 className="py-4">
     <b>Find your interests!</b>
     </h1>
-    { loading ? (<ClipLoader/> ):(
+    { loading ? (
+    <div className="cliploader" >
+    <ClipLoader  size={200} color={"#fff"}/>
+    </div>
+   ):(
     <div className="container-products">
         {users.map((user, i) => {
           if(user.verified) {

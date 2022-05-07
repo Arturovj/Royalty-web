@@ -7,9 +7,11 @@ import { useAuthContext } from "../../../contexts/AuthContext";
 import { Add, Remove } from "@material-ui/icons";
 import { getAccessToken } from "../../../store/AccesTokenStore";
 import { useParams } from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export default function Rightbar({ user }) {
   const { id } = useParams()
+  const [loading, setLoading] = useState(false)
   const [friends, setFriends] = useState([]);
   const { user: currentUser, dispatch } = useAuthContext();
   const [followed, setFollowed] = useState(
@@ -31,6 +33,7 @@ export default function Rightbar({ user }) {
   }, [user]);
 
   const handleClick = async () => {
+    setLoading(true)
     try {
       if (followed) {
         await axios.put(`https://royalty-api.onrender.com/api/users/me/unfollow`, {
@@ -46,6 +49,7 @@ export default function Rightbar({ user }) {
       setFollowed(!followed);
     } catch (err) {
     }
+    setLoading(false)
   };
 
   console.log(user)
@@ -56,8 +60,17 @@ export default function Rightbar({ user }) {
       <p></p>
         {user._id !== id && (
           <button className="rightbarFollowButton" type="button" onClick={handleClick}>
-            {followed ? "Unfollow" : "Follow"}
-            {followed ? <Remove /> : <Add />}
+            { loading ? (
+                <ClipLoader size={20}/>
+              ) : (
+                followed ? (
+                  <>
+                  Unfollow
+                  <Remove />
+                  </>
+                  ) : (<>Follow<Add /></>)
+              )
+            }
           </button>
          )} 
       </>

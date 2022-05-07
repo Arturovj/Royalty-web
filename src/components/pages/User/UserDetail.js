@@ -6,16 +6,22 @@ import { getUserDetail } from "../../../services/UsersService";
 import { Link, useParams } from "react-router-dom";
 import Rightbar from "../AddFriends/AddFriends";
 import { useAuthContext } from "../../../contexts/AuthContext";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const UserDetail = () => {
   const [currentUser, setCurrentUser] = useState({});
+  const [loading, setLoading] = useState(true);
   const { user } = useAuthContext();
   const { id } = useParams();
 
   useEffect(() => {
-    getUserDetail(id).then((user) => {
-      setCurrentUser(user);
-    });
+    getUserDetail(id)
+      .then((user) => {
+        setCurrentUser(user);
+      })
+      .finally(() => {
+        setLoading(false)
+      })
   }, []);
 
   return (
@@ -24,8 +30,10 @@ const UserDetail = () => {
         <div className="shape"></div>
         <div className="shape"></div>
       </div>
-     
-
+      { loading ? (
+      <div className="cliploader" >
+    <ClipLoader  size={200} color={"#fff"}/>
+    </div>) : (
       <form className="profile-form">
       <Rightbar
         style={{
@@ -76,6 +84,9 @@ const UserDetail = () => {
           </ul>
         </div>
       </form>
+
+
+    )}
 
       <h3 className="posts-container">Posts</h3>
       <div>

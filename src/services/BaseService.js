@@ -5,7 +5,7 @@ import { getAccessToken, logout } from '../store/AccesTokenStore'
 
 const createHttp = (useAccessToken = false) => {
     const http = axios.create({
-        baseURL: 'https://royalty-api.onrender.com/api'
+        baseURL:`${process.env.REACT_APP_API_URL}/api`
     })
 
     // https://royalty-api.onrender.com/api

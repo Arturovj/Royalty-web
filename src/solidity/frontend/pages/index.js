@@ -29,19 +29,26 @@ const MintNft = () => {
   return (
     <>
     <div className="modal-nft-button">
-    <ModalAppNft/>
+  
     </div>
       <div className="song-nft-container">
       
         <div className="card jvliah animated">
-          
+        <button className="button-mint-jvliah" onClick={() => Mint()}>MINT </button>
         </div>
+        <div className="card dualipa animated">
+        <button className="button-mint-dualipa" onClick={() => Mint()}>MINT </button>
+          </div>
         
-        <div className="mint-button">
-        <button onClick={() => Mint()}>Mintear NFT </button>
+        {/* <div className="mint-button">
+        <button className="button-mint-jvliah" onClick={() => Mint()}>MINT </button>
         </div>
+        <div className="mint-button">
+        <button className="button-mint-dualipa" onClick={() => Mint()}>MINT </button>
+        </div> */}
         
       </div>
+      <ModalAppNft/>
       
     </>
   );

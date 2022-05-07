@@ -35,7 +35,14 @@ const Profile = () => {
                         <p className="scnd-font-color">{user.email}</p>
                     </div>
                     <ul className="profile-options horizontal-list">
-                        <li><a className="comments aprofile" ><p><span className="icon fontawesome-comment-alt scnd-font-color"></span>Chat</p></a></li>
+                        <li><Link to="/messenger" style={{ textDecoration: "none" }}>
+                <a className="comments aprofile">
+                  <p>
+                    <span className="icon fontawesome-comment-alt scnd-font-color"></span>
+                    Chat
+                  </p>
+                </a>
+              </Link></li>
                         <li><a className="views aprofile" ><p><span className="icon entypo-vcard scnd-font-color"></span>Info</p></a></li>
                         <li><a className="likes aprofile" ><p><span className="icon entypo-note-beamed scnd-font-color"></span>Songs</p></a></li>
                     </ul>

@@ -3,24 +3,34 @@ import { getAllUsers } from "../../services/UsersService";
 import { Link } from "react-router-dom";
 import "./Products.scss";
 import verifiedpng from './Blue_Badge.png'
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 const Products = () => {
   const [users, setUsers] = useState([]);
 
+    const [loading, setLoading] = useState(true);
+
+
+
   useEffect(() => {
     getAllUsers().then((users) => {
       setUsers(users);
-    });
+    })
+    .finally(() => {
+      setLoading(false)
+    })
   }, []);
 
   console.log(users);
 
   return (
     <>
+    
     <h1 className="py-4">
     <b>Find your interests!</b>
     </h1>
+    { loading ? (<ClipLoader/> ):(
     <div className="container-products">
         {users.map((user, i) => {
           if(user.verified) {
@@ -58,6 +68,7 @@ const Products = () => {
         })}
       
     </div>
+    )}
     </>
   );
 };

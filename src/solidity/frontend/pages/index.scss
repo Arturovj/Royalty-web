@@ -1,7 +1,8 @@
 .song-nft-container{
-    display: flex;
+  display: flex;
   justify-content: center;
   flex-direction: row;
+  
 }
 .mint-button{
     padding-top: 450px;
@@ -10,11 +11,38 @@
 .button-mint-dualipa{
     z-index: 30;
     position: absolute;
+    width: 30px;
+    height: 30px;
+    background: none;
+    font-size: 2rem;
+    border: none;
 }
 .button-mint-jvliah{
     z-index: 30;
     position: absolute;
+    width: 30px;
+    height: 30px;
+    background: none;
+    font-size: 2rem;
+    border: none;
 }
+
+.button-mint-marshmello{
+    z-index: 30;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: none;
+    font-size: 2rem;
+    border: none;
+}
+.specs-jvliah{
+    
+    text-align: center;
+    margin: auto 0;
+    margin-bottom: 150px;
+}
+
 
 
 // :root {
@@ -27,9 +55,9 @@
 //     --dualipa1: #54a29e;
 //     --dualipa2: #a79d66;
 //     --dualipafront: url(https://media.vogue.mx/photos/6082d0d36e82e15ad6aefd7a/2:3/w_2560%2Cc_limit/GettyImages-1307105605.jpg);
-//     --eevee1: #efb2fb;
-//     --eevee2: #acc6f8;
-//     --eeveefront: url(https://assets.codepen.io/13471/eevee-gx.webp);
+//     --marshmello1: #efb2fb;
+//     --marshmello2: #acc6f8;
+//     --marshmellofront: url(https://assets.codepen.io/13471/marshmello-gx.webp);
 //     --mewtwo1: #efb2fb;
 //     --mewtwo2: #acc6f8;
 //     --mewtwofront: url(https://assets.codepen.io/13471/mewtwo-gx.webp);
@@ -264,14 +292,14 @@
   
   
   
-//   .card.eevee:hover {
+//   .card.marshmello:hover {
 //     box-shadow: 
 //       0 0 30px -5px white,
 //       0 0 10px -2px white,
 //       0 55px 35px -20px rgba(0, 0, 0, 0.5);
 //   }
-//   .card.eevee:hover:before,
-//   .card.eevee.active:before {
+//   .card.marshmello:hover:before,
+//   .card.marshmello.active:before {
 //     background-image: linear-gradient(
 //       115deg,
 //       transparent 20%,
@@ -462,9 +490,9 @@
     --dualipa1: #54a29e;
     --dualipa2: #a79d66;
     --dualipafront: url(https://media.vogue.mx/photos/6082d0d36e82e15ad6aefd7a/2:3/w_2560%2Cc_limit/GettyImages-1307105605.jpg);
-    --eevee1: #efb2fb;
-    --eevee2: #acc6f8;
-    --eeveefront: url(https://assets.codepen.io/13471/eevee-gx.webp);
+    --marshmello1: #efb2fb;
+    --marshmello2: #acc6f8;
+    --marshmellofront: url(https://zona69.net/wp-content/uploads/2019/10/marshmello-numero-1-de-youtube.jpg);
     --mewtwo1: #efb2fb;
     --mewtwo2: #acc6f8;
     --mewtwofront: url(https://assets.codepen.io/13471/mewtwo-gx.webp);
@@ -489,7 +517,7 @@
     
     position: relative;
     overflow: hidden;
-    margin: 20px;
+    margin: 50px;
     overflow: hidden;
 
     touch-action: none;
@@ -540,13 +568,13 @@
     --color2: var(--mewtwo2);
     --front: var(--mewtwofront);
   }
-  .card.eevee {
+  .card.marshmello {
     --color1: #ec9bb6;
     --color2: #ccac6f;
     --color3: #69e4a5;
     --color4: #8ec5d6;
     --color5: #b98cce;
-    --front: var(--eeveefront);
+    --front: var(--marshmellofront);
   }
   
   .card:before,
@@ -713,14 +741,14 @@
   
   
   
-  .card.eevee:hover {
+  .card.marshmello:hover {
     box-shadow: 
       0 0 30px -5px white,
       0 0 10px -2px white,
       0 55px 35px -20px rgba(0, 0, 0, 0.5);
   }
-  .card.eevee:hover:before,
-  .card.eevee.active:before {
+  .card.marshmello:hover:before,
+  .card.marshmello.active:before {
     background-image: linear-gradient(
       115deg,
       transparent 20%,
@@ -830,3 +858,7 @@
       }
     }
   }
+
+
+
+  

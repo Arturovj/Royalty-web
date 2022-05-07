@@ -26,9 +26,12 @@
   }
   
   .chatBoxTop {
+    border-radius: 5px;
     height: 100%;
+    width: 300px;
     overflow-y: scroll;
     padding-right: 10px;
+    background-color: rgb(51, 51, 51);
   }
   
   .chatBoxBottom {
@@ -46,6 +49,7 @@
   }
   
   .chatSubmitButton {
+    margin-left: 15px;
     width: 70px;
     height: 40px;
     border: none;

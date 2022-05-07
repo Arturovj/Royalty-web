@@ -1,5 +1,25 @@
 .login-nft{
     align-items: center;
     text-align: center;
+    
     margin: auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.metamask-icon{
+    margin:10px auto;
+    width: 20px;
+}
+
+.text{
+    margin:10px auto;  
+}
+
+.button-container{
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
 }

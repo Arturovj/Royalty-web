@@ -6,8 +6,6 @@ import ethereum from './nft2.png'
 function ModalAppNft() {
   const [openModal, setOpenModal] = useState(false);
 
-
-
   return (
     <div >
       <button 

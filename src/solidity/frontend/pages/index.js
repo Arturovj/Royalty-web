@@ -5,6 +5,7 @@ import "./index.scss";
 import toast from "react-hot-toast";
 import ModalAppNft from "../../../components/ModalNft/ModalApps";
 
+
 const MintNft = () => {
   const royaltys = useRoyaltys();
   const { active, account } = useWeb3React();
@@ -34,11 +35,19 @@ const MintNft = () => {
       <div className="song-nft-container">
       
         <div className="card jvliah animated">
-        <button className="button-mint-jvliah" onClick={() => Mint()}>MINT </button>
+        <button className="button-mint-jvliah" style={{ cursor:'pointer'}} onClick={() => Mint()}><i class="fas fa-dice-d6"></i></button>
+        
         </div>
+        
         <div className="card dualipa animated">
-        <button className="button-mint-dualipa" onClick={() => Mint()}>MINT </button>
+        <button className="button-mint-dualipa"style={{ cursor:'pointer'}} onClick={() => Mint()}><i class="fas fa-dice-d6"></i></button>
+       
           </div>
+
+          <div className="card marshmello animated">
+        <button className="button-mint-marshmello" style={{ cursor:'pointer'}} onClick={() => Mint()}><i class="fas fa-dice-d6"></i></button>
+      
+          </div>  
         
         {/* <div className="mint-button">
         <button className="button-mint-jvliah" onClick={() => Mint()}>MINT </button>
@@ -48,7 +57,24 @@ const MintNft = () => {
         </div> */}
         
       </div>
+      <div className="specs-jvliah" style={{ color: 'white'}}><p>-TIER LIST</p>
+     <lu>
+       <li>
+          VIP for every Show
+       </li>
+       <li>
+          WhiteList
+       </li>
+       <li>
+          Remix Challenges
+       </li>
+       </lu> 
+       
+      </div>
+
       <ModalAppNft/>
+
+     
       
     </>
   );

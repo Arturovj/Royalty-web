@@ -59,6 +59,15 @@ const MintNft = () => {
       </div>
       <div className="specs-jvliah" style={{ color: 'white'}}><p>-TIER LIST</p>
      <lu>
+     <h2>
+     <li>
+       
+       Click on 
+           <i class="fas fa-dice-d6 fa-fw"></i>
+           to Mint
+          
+       </li>
+       </h2>
        <li>
           VIP for every Show
        </li>
@@ -68,6 +77,7 @@ const MintNft = () => {
        <li>
           Remix Challenges
        </li>
+      
        </lu> 
        
       </div>

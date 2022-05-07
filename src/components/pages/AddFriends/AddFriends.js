@@ -61,7 +61,7 @@ export default function Rightbar({ user }) {
         {user._id !== id && (
           <button className="rightbarFollowButton" type="button" onClick={handleClick}>
             { loading ? (
-                <ClipLoader size={20}/>
+                <ClipLoader className="" size={20}/>
               ) : (
                 followed ? (
                   <>

@@ -27,8 +27,8 @@ const Products = () => {
   return (
     <>
     
-    <h1 className="py-4">
-    <b>Find your interests!</b>
+    <h1 className="py-4" >
+    <b style={{ color: 'white'}}>ROYAL<i class="fas fa-dice-d6"></i>Y USERS</b>
     </h1>
     { loading ? (
     <div className="cliploader" >

@@ -23,9 +23,20 @@ import SliderComponent from "./components/Slider/SliderComponent";
 import CookieConsent, { Cookies } from "react-cookie-consent";
 import { getLibrary } from './components/LoginNft/connector';
 import { Web3ReactProvider } from "@web3-react/core";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function App() {
   const { isAuthenticationFetched } = useAuthContext();
+
+  // const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     if() {
+//         setTimeout(() => setLoading(false), 2000)
+//     }
+// }, [])
+
+
 
   return (
     <div className="App">
@@ -36,7 +47,7 @@ function App() {
       <Toaster />
 
       {!isAuthenticationFetched ? (
-        <p>Loading...</p>
+        <p><ClipLoader/></p>
       ) : (
         <Routes>
           <Route element={<UnProtectedRoute />}>

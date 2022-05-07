@@ -14,8 +14,11 @@ export default function Messenger() {
   const [newMessage, setNewMessage] = useState("");
   const [arrivalMessage, setArrivalMessage] = useState(null)
   const [onlineUsers, setOnlineUsers] = useState([])
+  const [userAvatar, setUserAvatar] = useState([])
   const socket = useRef()
   const scrollRef = useRef()
+
+  console.log({currentChat})
 
   const { user } = useContext(AuthContext);
 
@@ -74,6 +77,24 @@ export default function Messenger() {
       }
       }
       getMessages()
+
+      if (currentChat) {
+
+        const notMe = currentChat.members.find(member => member !== user._id)
+  
+        console.log({notMe});
+
+        const getUser = async () => {
+          try{
+            const res = await axios("https://royalty-api.onrender.com/api/users/" + notMe)
+            setUserAvatar(res.data.avatar)
+          } catch(err){
+            console.log(err)
+          }
+        };
+        getUser()
+      }
+
   },[currentChat])
 
   const handleSubmit = async (e) => {
@@ -129,7 +150,7 @@ export default function Messenger() {
               <div className="chatBoxTop">
                   {messages.map(m=>(
                       <div ref={scrollRef}>
-                          <Message message={m} own={m.sender === user._id} currentUser={user}/>
+                          <Message message={m} own={m.sender === user._id} photo={m.sender === user._id ? user.avatar : userAvatar}/>
                       </div>
                   ))}
                 

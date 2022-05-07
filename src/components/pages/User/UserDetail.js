@@ -106,7 +106,7 @@ const UserDetail = () => {
                     <div className="">
                       {i + 1}. {post.title}
                     </div>
-                    <img src={post.image} alt=""></img>
+                    <img className="album-img" src={post.image} alt=""></img>
                   </Link>
                 </li>
               );

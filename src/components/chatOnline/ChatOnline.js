@@ -58,7 +58,7 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
           <div className="chatOnlineImgContainer">
             <img
               className="chatOnlineImg"
-              src="https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/2/d/9/d/2d9d9708f2b58900e511693d00fb67c1.jpg"
+              src={o.avatar}
               alt=""
             />
             <div className="chatOnlineBadge"></div>

@@ -20,7 +20,7 @@ export default function Messenger() {
   const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        socket.current = io("https://sockets-lby7.onrender.com") 
+        socket.current = io(process.env.REACT_APP_SOCKET) 
         socket.current.on("getMessage", data =>{
             setArrivalMessage({
                 sender: data.senderId,
@@ -129,7 +129,7 @@ export default function Messenger() {
               <div className="chatBoxTop">
                   {messages.map(m=>(
                       <div ref={scrollRef}>
-                          <Message message={m} own={m.sender === user._id}/>
+                          <Message message={m} own={m.sender === user._id} currentUser={user}/>
                       </div>
                   ))}
                 

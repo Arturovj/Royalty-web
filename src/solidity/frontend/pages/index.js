@@ -4,11 +4,14 @@ import useRoyaltys from "../hooks/useRoyaltys";
 import "./index.scss";
 import toast from "react-hot-toast";
 import ModalAppNft from "../../../components/ModalNft/ModalApps";
-
+import useTruncatedAddress from "../../../solidity/frontend/hooks/useTruncatedAddress";
 
 const MintNft = () => {
   const royaltys = useRoyaltys();
   const { active, account } = useWeb3React();
+
+  const truncatedAddress = useTruncatedAddress(account)
+
   const Mint = () => {
     console.log(royaltys);
     const upc = royaltys.methods
@@ -16,8 +19,8 @@ const MintNft = () => {
       .send({
         from: account,
       })
-      .on("transactionHash", (txHash) => {
-        toast.success(`Minting your Nft song... Transaction:${txHash}`);
+      .on("transactionHash", () => {
+        toast.success(`Minting your Nft song... Transaction:${truncatedAddress}`);
       })
       .on("receipt", () => {
         toast.success(`Your Nft Song has been Minted`);
@@ -26,6 +29,8 @@ const MintNft = () => {
         toast(`An ${error.message} ocurred`);
       });
   };
+
+
 
   return (
     <>

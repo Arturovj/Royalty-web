@@ -6,6 +6,7 @@ import Conversation from "../../conversation/Conversation";
 import Message from "../../message/Message";
 import {io} from "socket.io-client"
 import "./messenger.css";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export default function Messenger() {
   const [conversations, setConversations] = useState([]);
@@ -15,6 +16,7 @@ export default function Messenger() {
   const [arrivalMessage, setArrivalMessage] = useState(null)
   const [onlineUsers, setOnlineUsers] = useState([])
   const [userAvatar, setUserAvatar] = useState([])
+  const [loading, setLoading] = useState(false)
   const socket = useRef()
   const scrollRef = useRef()
 
@@ -53,18 +55,24 @@ export default function Messenger() {
 //   },[socket])
 
   useEffect(() => {
+     
     const getConversations = async () => {
+      setLoading(true)
       try {
         const res = await axios.get(
           "https://royalty-api.onrender.com/api/conversations/" + user._id
         );
         setConversations(res.data);
+        setLoading(false)
         console.log(res);
       } catch (err) {
         console.log(err);
       }
     };
+    
     getConversations();
+    
+    
   }, [user._id]);
 
   useEffect(() => {
@@ -133,8 +141,13 @@ export default function Messenger() {
   return (
     <div className="messenger">
       
-      <div className="chatMenu">
-        <div className="chatMenuWrapper">
+      
+        { loading ? (
+          <div className="cliploader2" >
+          <ClipLoader  size={200} color={"#fff"}/>
+          </div>
+        ):(<div className="chatMenu">
+            <div className="chatMenuWrapper">
           <input placeholder="Search for friends" className="chatMenuInput" />
           {conversations.map((c, index) => (
                   <div onClick={() => setCurrentChat(c)}>
@@ -142,7 +155,9 @@ export default function Messenger() {
                   </div>
              ))}
         </div>
-      </div>
+        </div>
+        )}
+      
       <div className="chatBox">
         <div className="chatBoxWrapper messenger-form">
           {currentChat ? (

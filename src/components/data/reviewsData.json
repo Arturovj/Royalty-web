@@ -52,14 +52,14 @@
         "id": "8",
         "image": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-248707,resizemode-1,msid-64892314/magazines/panache/tech-titan-mark-zuckerberg-becomes-third-richest-in-the-world-with-net-worth-of-81-6-billion.jpg",
         "name": "Pablo",
-        "review": " frasecita con review ",
+        "review": " Awesom! ",
         "stars": "5"
     },
     {   
         "id": "9",
-        "image": "",
-        "name": "Manuel",
-        "review": " frasecita con review ",
+        "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+        "name": "Manuela",
+        "review": " Awesome App ",
         "stars": "5"
     },
     {   

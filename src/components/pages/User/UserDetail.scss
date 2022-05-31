@@ -7,6 +7,10 @@
     width: 450px;
 }
 
+
+.post-container{
+    margin-top: 200px;
+}
 .cliploader{
     width: 15%;
     margin: 0 auto;
@@ -92,11 +96,11 @@ border-radius: 50%;
         height: 520px;
         width: 400px;
         background-color: rgba(255,255,255,0.13);
-        position: absolute;
+        
         display: flex;
         align-items: center;
         transform: translate(-50%,-50%);
-        top: 60%;
+       
         left: 50%;
         border-radius: 10px;
         backdrop-filter: blur(10px);

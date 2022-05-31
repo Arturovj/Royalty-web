@@ -88,8 +88,8 @@ const UserDetail = () => {
 
     )}
 
-      <h3 className="posts-container">Posts</h3>
-      <div>
+      <h3 className="posts-container"></h3>
+      <div className="post-container">
         <hr />
         <div className="post-song">
           <ul className="list-group">
